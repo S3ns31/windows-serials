@@ -1,0 +1,280 @@
+
+Hal.dll is missing or corrupt: Fix for Windows XP, Vista, 7
+/Knowledgebase /Hal.dll is missing or corrupt: Fix for Windows XP, Vista, 7
+
+Get the fix for the error HAL.dll is missing or corrupt on Windows XP, Windows Vista and Windows 7.
+
+Contents [hide]
+
+    1 About “HAL.dll is missing or corrupt”
+        1.1 Description and Symptoms
+        1.2 Symptom 1: “HAL is missing, or corrupt” error screen on startup
+    2 Causes of this Error
+        2.1 Cause 1: Invalid BOOT.INI file configuration
+        2.2 Cause 2: BCD configuration is incorrect
+        2.3 Cause 3: The hal.dll file is in fact corrupted or missing
+        2.4 Cause 4: File system integrity compromised
+    3 Fixing “Hal.dll is missing or corrupt” on Windows
+        3.1 Fix #1: Rebuild boot.ini or BCD with Easy Recovery Essentials
+        3.2 Fix #2: Manually attempt rebuild of boot.ini
+        3.3 Fix #3: Replace hal.dll
+        3.4 Fix #4: Use Startup Repair to attempt HAL replacement
+        3.5 Fix #5: Repair corrupted system files with the SFC command
+        3.6 Fix #6: Check the hard drive with CHKDSK utility
+    4 More Information
+        4.1 Linked Entries
+        4.2 Support Links
+        4.3 Applicable Systems
+
+About “HAL.dll is missing or corrupt”
+
+The following information on this error has been compiled by NeoSmart Technologies, based on the information gathered and reported by our global network of engineers, developers, and technicians or partner organizations.
+Description and Symptoms
+
+The error messages, alerts, warnings, and symptoms below are tied to this error.
+Symptom 1: “HAL is missing, or corrupt” error screen on startup
+
+The HAL(Hardware Abstraction Layer) serves as an interface between a system’s hardware and software, providing a consistent hardware platform on which to run applications. When a HAL is employed, applications do not access hardware directly but access the abstract layer provided by the HAL. For example, responding to an interrupt is quite different on a machine with an Advanced Programmable Interrupt Controller (APIC) than on one without. The HAL provides a single function for this purpose that works with all kinds of interrupts by various chipsets, so that other components need not be concerned with the differences. In Windows, HAL is implemented in hal.dll, and when this file is either missing on corrupt, the boot process halts, and a error screen is displayed.
+
+Here is an example of “HAL is missing or corrupt” error screen for Windows XP:
+
+Hal.dll Win XP error screen
+
+Windows could not start because the following file is missing or corrupt:
+<Windows root>\system32\hal.dll.
+Please re-install a copy of the above file.
+
+And here is an example of “HAL is missing or corrupt” error screen for Windows Vista and Windows 7:
+
+Hal.dll Win Vista+ error screen
+
+Windows Boot Manager
+
+Windows failed to start. A recent hardware or software change might be the 
+cause. To fix the problem:
+
+   1. Insert your Windows installation disc and restart your computer.
+   2. Choose your language settings, and then click "Next."
+   3. Click "Repair your computer."
+
+If you do not have this disc, contact your system administrator or computer 
+manufacturer for assistance
+
+     File: \Windows\system32\hal.dll
+     Status: 0xc0000221
+     Info: Windows failed to load because the HAL is missing, or corrupt.
+
+The “Status” 0x code and the “Info” text may differ, but the file in question is always \Windows\system32\hal.dll
+Causes of this Error
+
+This error has been known to occur as a result of one of the following causes:
+Cause 1: Invalid BOOT.INI file configuration
+
+On Windows XP and other operating systems using the NTLDR bootloader, the boot.ini file configuration could be either changed or become incorrect. This consequently means the ARC paths in the [operating systems] section or the default entry in BOOT.INI are incorrect. This can happen if boot.ini is modified (inadvertently or maliciously), if the BIOS settings have changed, or if hardware (especially IDE, SATA, or SCSI disk drives) have been added or removed.
+Cause 2: BCD configuration is incorrect
+
+Invalid data in BOOTMGR’s boot configuration data file (BCD) can cause this error to be present on Windows Vista and Windows 7. Hal.dll is required for the Windows kernel to communicate with the underlying hardware in a platform-agnostic fashion. Incorrect data in the BCD will cause BOOTMGR to load Windows with the wrong system root set, and hal.dll will not be found. This will cause the “HAL is missing or corrupt” error to appear.
+Cause 3: The hal.dll file is in fact corrupted or missing
+
+Failed Windows Updates or Automatic Updates to Windows that involve an upgrade of critical system files (especially service pack installations) that update hal.dll may result in this error. If hal.dll is not written to the disk correctly, or an incompatible version of hal.dll is used, then “HAL is missing or corrupt” error may appear.
+Cause 4: File system integrity compromised
+
+The hard drive’s file system may become damaged because of disk write errors, power outages or virus attacks. If that’s the case, the operating system cannot find hal.dll to boot properly and the loading process is halted.
+Fixing “Hal.dll is missing or corrupt” on Windows
+
+Windows Setup CD/DVD Required!
+Some of the solutions below require the use of the Microsoft Windows setup CD or DVD. If your PC did not come with a Windows installation disc or if you no longer have your Windows setup media, you can use Easy Recovery Essentials for Windows instead. EasyRE will automatically find and fix many problems, and can also be used to solve this problem with the directions below.
+Fix #1: Rebuild boot.ini or BCD with Easy Recovery Essentials
+
+Easy Recovery Essentials’ one-click automated system repair corrects issues caused by missing or misconfigured boot.ini and BCD by recreating them from scratch on the active bootable partition for Windows. This is done automatically as part of the automated repair process, and requires no manual action or user intervention.
+
+Easy Recovery Essentials is guaranteed to fix the “Hal.dll is missing or corrupt” error automatically using its built-in Automated Repair option. EasyRE is currently available for Windows XP, Vista, 7 and 8 and can be downloaded and created on any PC.
+
+    Download Easy Recovery Essentials. Make sure to note your Windows version (XP, Vista, 7 or 8) before you download EasyRE. This guide can help you identify what version of Windows you have installed.
+    Burn the image. Follow these instructions on how to burn the bootable ISO image very carefully, as making a bootable CD can be tricky! Alternatively, these instructions explain how to create a bootable EasyRE recovery USB stick/drive.
+    Boot up your PC from the Easy Recovery Essentials CD or USB you created.
+    Once EasyRE is running, choose the “Automated Repair” option and click Continue.
+    EasyRE Home
+
+    Choose “Automated Repair” in Easy Recovery Essentials
+    After EasyRE scans your computer’s drives, identify and select the drive letter for your Windows installation from the list, and then click on the Automated Repair button to begin.
+    EasyRE displays a list of found Windows operating systems
+
+    Choose the drive associated with the Windows installation you’re trying to repair.
+    Easy Recovery Essentials will start analyzing the selected drive for problems. EasyRE will test for and attempt to automatically correct errors with the disk, partition, bootsector, filesystem, bootloader, and registry. No intervention is required, as EasyRE’s repair is fully automated:
+    EasyRE: Automated Repair
+
+    Easy Recovery Essentials searches for errors and makes corrections to the selected Windows installation.
+    Once the process is complete, EasyRE will report its findings. Click on the Restart button to reboot your PC and test the changes.
+    The “Hal.dll is missing or corrupt” error should now be fixed as your PC begins to load:
+    EasyRE: Automated Repair
+
+    Windows, booting up successfully.
+
+You can download Easy Recovery Essentials from here.
+Fix #2: Manually attempt rebuild of boot.ini
+
+A boot.ini file is used by Windows to configure and display its operating system options. Instructions on manually recreating the boot.ini file are also available, but require a moderate level of computer expertise. The instructions below will guide you on recreating boot.ini automatically from the Windows XP setup CD.
+
+Unable to boot into the Windows setup CD?
+See our guide on setting up a PC to boot from the CD or DVD for troubleshooting and more detailed instructions.
+
+    Insert your Windows XP CD and restart your computer.
+    Press a key to boot into the CD when you see the “Press any key to boot from CD” message.
+    When you arrive at the “Welcome to Setup” message, press R to start the Recovery Console.
+    Type in your Administrator password; hit Enter
+    The next command you need to write is below; hit Enter afterwards:
+
+    bootcfg /rebuild
+
+The above command, bootcfg /rebuild, will scan your computer for installed Windows copies. If you have Windows XP, here are the next steps:
+
+    Press Y if the command prompt shows a message similar to the one below:
+
+    Total Identified Windows Installs: 1
+
+    [1] C:\Windows
+    Add installation to boot list? (Yes/No/All)
+
+    When you receive a message like this:
+
+    Enter Load Identifier
+
+    You are being asked to provide a name to be assigned and shown in the boot menu for the installation you picked in the previous step. Examples:
+
+    Enter Load Identifier: Windows XP Professional (Recovered)
+
+    (Optional) When you receive a message like this:
+
+    Enter OS Load options
+
+    Type in /fastdetect followed by Enter
+    Restart your computer.
+
+Here is an example of what the PC’s console output should look like once the boot.ini file is properly restored:
+Fixing Boot.ini file
+
+Fixing Boot.ini file
+Fix #3: Replace hal.dll
+
+Windows Setup CD/DVD Required!
+Some of the solutions below require the use of the Microsoft Windows setup CD or DVD. If your PC did not come with a Windows installation disc or if you no longer have your Windows setup media, you can use Easy Recovery Essentials for Windows instead. EasyRE will automatically find and fix many problems, and can also be used to solve this problem with the directions below.
+
+If hal.dll is in fact missing or corrupt, you can restore the original hal.dll file back from your Windows XP installation disc.
+
+Unable to boot into the Windows setup CD?
+See our guide on setting up a PC to boot from the CD or DVD for troubleshooting and more detailed instructions.
+
+    Insert your XP CD into the computer.
+    Restart your computer.
+    Press any key to boot into the CD when you see the “Press any key to boot from CD” message.
+    Press R to start Recovery Console when the Options screen appears.
+    Type in your Administrator password followed by the Enter key to submit it.
+    You’ll reach the Command Prompt now, type the following command, where D:\ is your CD’s drive letter and C:\ is the letter of the drive you installed Windows to:
+
+    expand D:\i386\hal.dl_ C:\Windows\system32\
+
+    Press Y when you are asked if you want to overwrite this file and then hit Enter to submit the command.
+    Restart your computer.
+
+Here is an example of what the PC’s console output should look like once the hal.dll file is properly restored:
+Replacing the hal.dll file
+
+Replacing the hal.dll file
+Fix #4: Use Startup Repair to attempt HAL replacement
+
+On Windows Vista and Windows 7, Startup Repair can be used to scan the system for damaged or missing system files to replace the hal.dll file if it is corrupt or missing.
+
+Windows Setup CD/DVD Required!
+Some of the solutions below require the use of the Microsoft Windows setup CD or DVD. If your PC did not come with a Windows installation disc or if you no longer have your Windows setup media, you can use Easy Recovery Essentials for Windows instead. EasyRE will automatically find and fix many problems, and can also be used to solve this problem with the directions below.
+
+Startup Repair is an automated diagnosis and repair tool that is available from the Windows setup disc and can be used to find and repair some common problems. More information about how Startup Repair operates and what it does can be found in our knowledgebase. The following steps will initiate Startup Repair from the Windows setup disc:
+
+Unable to boot into the Windows setup CD?
+See our guide on setting up a PC to boot from the CD or DVD for troubleshooting and more detailed instructions.
+
+    Insert your Windows installation DVD into your PC’s CD-ROM drive,
+    Fully power down your PC, and make sure it has fully shut off,
+    Power up your PC,
+    Press any key when you see “Press any key to boot from CD or DVD..”
+    Click the link titled “Repair your computer” in the bottom-lefthand corner, after first selecting your language and keyboard options.
+    Windows 7 setup Install Now dialog, with repair your computer link
+    Wait for Startup Repair to scan your PC for Windows installations, then select your install from the list it shows:
+    Startup repair lists available operating systems to repair.
+    Choose “Startup Repair” from the list of available recovery options to begin:
+    Startup Repair lists all available recovery options, choose a recovery tool
+    Startup Repair will begin scanning your installation for known issues and will attempt a repair, if possible.
+    Windows Startup Repair is searching for problems
+
+Here is an example of what the PC’s startup repair should look like once the hal.dll file is properly restored:
+Hal.dll restored by Windows 7 Startup Repair
+
+Hal.dll restored by Windows 7 Startup Repair
+Fix #5: Repair corrupted system files with the SFC command
+
+On Windows Vista and Windows 7, it is possible to use the built-in Windows SFC(system file checker) tool to automatically scan a computer’s system files and repair them if necessary.
+
+Here are the steps to run SFC:
+
+    Boot from your Windows install disc
+    Click on Repair your computer after selecting proper language, time and keyboard input.
+    Select the Windows installation drive, which is usually C:\, and click Next
+    Choose Command Prompt when the System Recovery Options box appears
+    Write the following command and press Enter afterwards:
+
+    sfc /scannow /offbootdir=D:\ /offwindir=D:\Windows\
+
+    Replace D: with the letter of the driver where Windows is installed, and D:\Windows with the Windows folder location.
+
+Here is an example of what the PC’s console output should look like once the sfc.exe scan is complete and missing files are successfully restored:
+Hal.dll restored by the SFC utility
+
+Hal.dll restored by the SFC utility
+Fix #6: Check the hard drive with CHKDSK utility
+
+If the hard drive has its file integrity compromised, it is possible to use built-in Windows CHKDSK utility to scan the disk and fix the file system errors.
+
+Here are the steps to run CHKDSK:
+
+    Boot from your Windows install disc
+    Click on Repair your computer after selecting proper language, time and keyboard input.
+    Select the Windows installation drive, which is usually C:\, and click Next
+    Choose Command Prompt when the System Recovery Options box appears
+    Write the following command and press Enter afterwards:
+
+    chkdsk C: /f
+
+    Replace C: with the letter of the driver where Windows is installed.
+
+Here is an example of what the PC’s console output should look like once the chkdsk.exe is complete:
+Chkdsk utility results screen
+
+Chkdsk utility results screen
+More Information
+Linked Entries
+
+    bootcfg
+
+Support Links
+
+    Easy Recovery Essentials for Windows – our repair and recovery disk.
+
+    It’s an easy-to-use and automated diagnostics disk. It’s available for Windows 8, Windows 7 and Windows Vista. It’s also available for Windows XP and Windows Server.
+
+    Read more at Windows Recovery Disks.
+    The NeoSmart Support Forums, member-to-member technical support and troubleshooting.
+    Get a discounted price on replacement setup and installation discs: Windows XP, Windows Vista, Windows 7.
+
+Applicable Systems
+
+This Windows-related knowledgebase article applies to the following operating systems:
+
+    Windows XP (all editions)
+    Windows Vista (all editions)
+    Windows 7 (all editions)
+
+
+
+
+{link}
+https://neosmart.net/wiki/hal-dll-missing-corrupt/
